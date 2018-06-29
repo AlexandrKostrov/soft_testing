@@ -1,0 +1,63 @@
+.section {
+    background: dodgerblue;
+    border-radius: 3px;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    box-sizing: border-box;
+    width: 670px;
+    margin: 20px;
+    position: absolute;
+    bottom: 20px;
+    height: 500px;
+    margin-left:300px;
+  }
+
+  .section > header {
+    padding: 8px 10px;
+   
+     
+    flex-wrap: nowrap;
+    height: 40px;
+   
+  }
+  
+  .section button.load-more {
+    outline: 0;
+    background-color: transparent;
+    border: none;
+    border-radius: 0 0 3px 3px;
+    color: #010608;
+    display: block;
+    flex: 0 0 auto;
+    padding: 8px 10px;
+    position: relative;
+    cursor: pointer;
+    line-height: 18px;
+    font-weight: 400;
+    font-size: 14px;
+    width: 20%;
+    text-align: center;
+    margin-left: 40%;
+  }
+  
+  .section > .body {
+    overflow-y: auto;
+    overflow-x: hidden;
+    padding: 0 8px;
+  }
+  
+  .section button.load-more:hover {
+    background-color: #cdd2d4;
+    color: #4d4d4d;
+    text-decoration: underline;
+  }
+
+  .sort{
+     
+    float: right;
+    padding: 20px 1em 0 0;
+    margin: 2px 0 0 480px;
+     
+  }
+ 

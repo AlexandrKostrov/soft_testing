@@ -1,0 +1,16 @@
+.header{
+    width: 98%;
+    height: 70px;
+    border: solid black;
+    border-width: 4px;
+    margin-top: 0%;
+    text-align: left;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: 1.3rem;
+    position:relative;
+    background-color: darkgrey;
+}
+
+.headerText{
+   padding-left: 20px;
+}

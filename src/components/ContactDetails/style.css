@@ -1,0 +1,14 @@
+.section {
+    background: dodgerblue;
+    border-radius: 3px;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    box-sizing: border-box;
+    width: 670px;
+    margin: 20px;
+    position: absolute;
+    bottom: 20px;
+    height: 485px;
+    margin-left:300px;
+  }

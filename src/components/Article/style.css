@@ -1,0 +1,9 @@
+.article{
+    margin: 40px;
+    display: flex;
+    font-family: cursive;
+    border: rgb(19, 3, 61);
+    border-width: 3px 7px 7px 4px;
+    border-style: solid;
+    
+}
