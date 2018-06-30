@@ -1,6 +1,6 @@
 import { compose, withHandlers, withState } from 'recompose';
 import { connect } from 'react-redux';
-import {loadContact, sortByDate, sortByName,matchCatch} from '../reducers/contacts'
+import {loadContact, sortByDate, sortByName,matchCatch,serverCon} from '../reducers/contacts'
 import MainContainer from './MainContainer';
 
 export default compose(
@@ -13,7 +13,8 @@ export default compose(
         loadContact,
         sortByDate,
         sortByName,
-        matchCatch
+        matchCatch,
+        serverCon,
       }
     ),
  

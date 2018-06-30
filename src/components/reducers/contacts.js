@@ -35,7 +35,19 @@ export default function stateReducer(state = contacts.slice(0,3), action) {
           }
          );
        return newStateMatching;
-     }
+         }
+     case 'SERVER_DATA' : {
+       let st=[];
+       async function func(){
+        await new Promise(ok=> setTimeout(ok,1000));
+        st=await fetch('http://jsonplaceholder.typicode.com/users'
+        ,).then(r=>r.json());
+        
+    }
+    console.log(st);
+    return st;
+      }
+ 
     default:
     return state;
 }
@@ -58,6 +70,13 @@ export function loadContact(payload) {
   export function sortByName(payload) {
     return {
       type: 'NAME_SORT',
+      payload,
+    };
+  }
+
+  export function serverCon(payload) {
+    return {
+      type: 'SERVER_DATA',
       payload,
     };
   }

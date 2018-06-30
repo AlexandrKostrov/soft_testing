@@ -8,9 +8,12 @@ import hoc from './hoc.js';
 import './style.css';
 
 
-const MainContainer = ({contacts,loadContact,sortByDate,sortByName,match,matchCatch,onUsersRec}) => {
+const MainContainer = ({contacts,loadContact,sortByDate,sortByName,match,matchCatch,
+  onUsersRec,display,renderUsers,users,renderRoutes,serverCon}) => {
+      
   return (  <section className="section">
           <header>
+         
             <div className="sort" >
             <AutoComplete onChange={matchCatch}/>
           <button onClick = {sortByDate} > Date Sort </button>
@@ -18,7 +21,7 @@ const MainContainer = ({contacts,loadContact,sortByDate,sortByName,match,matchCa
           </div>
           </header>
           <div className="body">
-            {
+         { !display ?
               contacts.map(contact => {
               return (
                 <main>
@@ -30,12 +33,14 @@ const MainContainer = ({contacts,loadContact,sortByDate,sortByName,match,matchCa
                 information = {contact.information}
                 />
                 </NavLink>
-              
+
             </main>
                 )
-              })
+              }) :renderUsers()
             }
-    
+            
+     
+           
           </div>
           <footer>
       <button className="load-more"
@@ -43,12 +48,12 @@ const MainContainer = ({contacts,loadContact,sortByDate,sortByName,match,matchCa
         Load More
       </button>
       <button className="load-more"
-      onClick = {onUsersRec}>
+      onClick = {serverCon}>
         Load from Server
       </button>
     </footer>
     </section>)
-     
+
 }
 
 export default withUsers(hoc(MainContainer));
