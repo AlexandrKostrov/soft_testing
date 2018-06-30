@@ -36,17 +36,13 @@ export default function stateReducer(state = contacts.slice(0,3), action) {
          );
        return newStateMatching;
          }
-     case 'SERVER_DATA' : {
-       let st=[];
-       async function func(){
-        await new Promise(ok=> setTimeout(ok,1000));
-        st=await fetch('http://jsonplaceholder.typicode.com/users'
-        ,).then(r=>r.json());
+         case 'PREVIOUS_STATE': {
+          const newlyState = [...currentState];
+          
         
-    }
-    console.log(st);
-    return st;
-      }
+          return newlyState;
+            }  
+
  
     default:
     return state;
@@ -74,16 +70,18 @@ export function loadContact(payload) {
     };
   }
 
-  export function serverCon(payload) {
-    return {
-      type: 'SERVER_DATA',
-      payload,
-    };
-  }
+ 
 
   export function matchCatch(value) {
     return {
       type: 'MATCH_DATA',
       payload: value,
+    };
+  }
+
+  export function prevState(payload) {
+    return {
+      type: 'PREVIOUS_STATE',
+      payload,
     };
   }

@@ -9,6 +9,7 @@ import './App.css';
 
 class App extends Component {
   render() {
+    const {prevState} = this.props; 
     return (
       <div>
      <Header/>
@@ -24,6 +25,7 @@ class App extends Component {
         return ( <Route exact path={`/${contact.lastName}`}  render={props => {
           return <ContactDetail {...props} 
                 avatar = {contact.avatar}
+                redisplayState = {prevState}
                 fullName = {`${contact.firstName} ${contact.lastName}`}
                 age = {contact.age}
                 information = {contact.information} />;
@@ -31,7 +33,7 @@ class App extends Component {
         }} />)
       })}
       {this.props.users.map(contact=>{
-        console.log(contact);
+      //  console.log(contact);
         return ( <Route exact path={`/${contact.username}`}  render={props => {
           return <ContactDetail {...props} 
                // avatar = {contact.avatar}

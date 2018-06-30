@@ -26,11 +26,17 @@ export default function hoc (Component){
                  
             )
         }
-     
+        handleRef = (node) => {
+            this.but = node;
+        }
         show = async () => {
             await this.props.serverUsers();
            console.log(this.props.users)
             this.setState({display:true});
+        }
+        showLocalContacts = () =>{
+            this.props.loadContact();
+            this.setState({display:false});
         }
         render(){
             return (
@@ -38,7 +44,9 @@ export default function hoc (Component){
                  display={this.state.display}
                  renderUsers={this.renderUsers}
                  onUsersRec={this.show}
-                 renderRoutes={this.routes}
+                 showLocalContacts={this.showLocalContacts}
+                 handleRef={this.handleRef}
+                 button = {this.but}
                  />
             )
         }

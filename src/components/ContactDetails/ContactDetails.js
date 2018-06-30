@@ -2,7 +2,7 @@ import React from 'react';
 import {Link} from 'react-router-dom';
 import Article from '../Article/Article';
 
-const ContactDetail = ({avatar,fullName,age,information}) => {
+const ContactDetail = ({avatar,fullName,age,information,redisplayState}) => {
     return(
         <section className="section">
           
@@ -17,7 +17,8 @@ const ContactDetail = ({avatar,fullName,age,information}) => {
           </div>
           <footer>
           <Link to={'/'}> 
-      <button className="load-more">
+      <button className="load-more"
+      onClick={redisplayState}>
         back
       </button>
       </Link> 
