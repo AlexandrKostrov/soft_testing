@@ -7,7 +7,7 @@ import hoc from './hoc.js';
 import autoCompleteHoc from './autoCompleteHoc';
 import { LazyLoadImage,trackWindowScroll } from 'react-lazy-load-image-component';
 import AVATARS from '../../stubs/avatars';
-import scrollHoc from '../container/scrollHoc';
+import scrollHoc from './scrollHoc';
 import './style.css';
 
 
@@ -27,32 +27,16 @@ const MainContainer = ({contacts,loadContact,sortByDate,sortByName,match,matchCa
           </div>
           </header>
           <div className="body" onScroll={scroll}>
-         {/* { !display ?
-              contacts.map(contact => {
-              return (
-                <main>
-                <NavLink to={contact.lastName}>
-               <Card
-                avatar = {contact.avatar}
-                fullName = {`${contact.firstName} ${contact.lastName}`}
-                age = {contact.age}
-                information = {contact.information}
-                />
-                </NavLink>
-
-            </main>
-                )
-              }) :renderUsers()
-            }   */
-            user.map((contact,index) => {
+         { 
+            user.map(contact => {
               return (
                 <main>
                 <NavLink to={contact.name}>
                <Card
-                avatar = {AVATARS[index]}
+                avatar = {AVATARS[contact.id-1]}
                 coords={coords}
                 fullName = {`${contact.name}`}
-                age = {contact.id}
+                id = {contact.id}
                 information = {contact.phone}
                 />
                 </NavLink>
@@ -62,7 +46,6 @@ const MainContainer = ({contacts,loadContact,sortByDate,sortByName,match,matchCa
               })
             }
           </div>
-        
           <footer>
       <button ref={handleRef} className="load-more"
       onClick = {loadContact}>

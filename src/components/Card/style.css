@@ -27,18 +27,20 @@
     top: -20%;
   }
 
-  .age {
+  .id {
     float: right;
     padding-right: 20px;
   }
 
   .info {
     position:absolute;
-    padding-left: 100px;
+    margin-left: 215px;
     bottom:0; 
-     
-    
-    width: 50px;
-   
+    width: 220px;
     font-family: cursive;
   }
+.tel{
+  position:absolute;
+  bottom:30;
+  margin-left: 215px;
+}

@@ -36,10 +36,11 @@ export default function stateReducer(state = initialState, action) {
          } 
     case 'MATCH_DATA': {
         const newlyState = [...currentState];
-        const value = action.payload;     
+       // const value = action.payload; 
+        const match =new RegExp(action.payload, "i");    
         const newStateMatching = newlyState.filter((obj) => {
-         if(!value){return newlyState}
-          return obj.name.indexOf(value) !== -1 ;            
+         if(!action.payload){return newlyState}
+          return  match.test(obj.name) ;            
         }
           );
      return newStateMatching;

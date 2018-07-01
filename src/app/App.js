@@ -4,6 +4,7 @@ import MainContainer from '../components/MainContainer';
 import ContactDetail from '../components/ContactDetails/ContactDetails';
 import withUsers from './withUsers';
 import hoc from '../components/MainContainer/hoc';
+import AVATARS from '../stubs/avatars';
 import { BrowserRouter as Router, Route, Switch, Redirect } from 'react-router-dom';
 import './App.css';
 
@@ -20,26 +21,20 @@ class App extends Component {
             
       <Route exact path={`/`} component ={MainContainer} />
     
-      {/* {this.props.contacts.map(contact=>{
-        console.log(contact);
-        return ( <Route exact path={`/${contact.lastName}`}  render={props => {
-          return <ContactDetail {...props} 
-                avatar = {contact.avatar}
-                redisplayState = {prevState}
-                fullName = {`${contact.firstName} ${contact.lastName}`}
-                age = {contact.age}
-                information = {contact.information} />;
-                  
-        }} />)
-      })} */}
+    
       {this.props.user.map(contact=>{
-      //  console.log(contact);
+          
         return ( <Route exact path={`/${contact.name}`}  render={props => {
           return <ContactDetail {...props} 
-               // avatar = {contact.avatar}
+                avatar = {AVATARS[contact.id - 1]}
                 fullName = {`${contact.name}`}
-                //age = {contact.age}
-                //information = {contact.information} 
+                id = {contact.id}
+                email = {contact.email} 
+                phone = {contact.phone}
+                username = {contact.username}
+                website = {contact.website}
+                address = {contact.address}
+                company = {contact.company}
                 redisplayState = {prevState}
                 />;
                   

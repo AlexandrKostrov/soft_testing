@@ -3,16 +3,17 @@ import { LazyLoadImage,trackWindowScroll  } from 'react-lazy-load-image-componen
 import './style.css';
  
 const  Image = ({ pict,coords}) =>{
-  return (<div className="image">
-     <LazyLoadImage
+  
+  return <LazyLoadImage
+     className="image"
      src={pict}
      scrollPosition={coords}
      />
-    {/* <img className="image" src={pict} />  */}
+    } 
      
        
     
-  </div>)
- }
+
+ 
 
 export default Image ;
