@@ -10,7 +10,7 @@ const Card = (props) =>{
     <Image  pict={props.avatar} />
     </LazyLoadComponent>
      <h1 className = "fullName">{props.fullName}</h1>
-     <span className="age">{props.age} years</span>
+     <span className="age">{props.age} idNumber</span>
      <div className="info">{props.information}</div>
   </div>)
 }

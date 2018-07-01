@@ -20,7 +20,7 @@ class App extends Component {
             
       <Route exact path={`/`} component ={MainContainer} />
     
-      {this.props.contacts.map(contact=>{
+      {/* {this.props.contacts.map(contact=>{
         console.log(contact);
         return ( <Route exact path={`/${contact.lastName}`}  render={props => {
           return <ContactDetail {...props} 
@@ -31,15 +31,16 @@ class App extends Component {
                 information = {contact.information} />;
                   
         }} />)
-      })}
-      {this.props.users.map(contact=>{
+      })} */}
+      {this.props.user.map(contact=>{
       //  console.log(contact);
-        return ( <Route exact path={`/${contact.username}`}  render={props => {
+        return ( <Route exact path={`/${contact.name}`}  render={props => {
           return <ContactDetail {...props} 
                // avatar = {contact.avatar}
                 fullName = {`${contact.name}`}
                 //age = {contact.age}
                 //information = {contact.information} 
+                redisplayState = {prevState}
                 />;
                   
         }} />)

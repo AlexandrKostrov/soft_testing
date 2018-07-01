@@ -57,7 +57,17 @@
      
     float: right;
     padding: 20px 1em 0 0;
-    margin: 2px 0 0 480px;
+    margin: 2px 0 0 400px;
      
   }
- 
+
+  .sort > button{
+     
+   
+    margin: 2px;
+     
+  }
+
+  .hide{
+    visibility: hidden;
+  }

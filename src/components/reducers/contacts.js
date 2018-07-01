@@ -1,6 +1,7 @@
 import contacts from '../../stubs/contacts';
 import uuid from 'uuid/v4';
 import {dateSort, nameSort} from '../../functions/sortingFunctions/contactsSort'
+import getUserData from '../../api';
 
 let currentState = contacts.slice(0,3);
 export default function stateReducer(state = contacts.slice(0,3), action) {
@@ -85,3 +86,4 @@ export function loadContact(payload) {
       payload,
     };
   }
+

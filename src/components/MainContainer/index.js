@@ -1,18 +1,20 @@
 import { compose, withHandlers, withState } from 'recompose';
 import { connect } from 'react-redux';
-import {loadContact, sortByDate, sortByName,matchCatch,prevState} from '../reducers/contacts'
+// import {loadContact, sortByDate, sortByName,matchCatch,prevState,} from '../reducers/contacts'
+import {getUser,sortByServName,sortById,loadContact,matchCatch,prevState} from '../reducers/user';
 import MainContainer from './MainContainer';
 
 export default compose(
     connect(
-      ({ contacts }) => ({
-        contacts,
+      ({ user }) => ({
+        user,
        
       } ),
       {
+        sortByServName,
+        sortById,
+        getUser,
         loadContact,
-        sortByDate,
-        sortByName,
         matchCatch,
         prevState
       }

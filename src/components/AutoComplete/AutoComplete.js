@@ -10,10 +10,9 @@ class AutoComplete extends React.Component {
     }
       resolver = () =>{
           const {button} = this.props; 
-         
          const value = this.inp.value;
         if(value){
-            console.log(button)
+           
             button.style.visibility = "hidden";
         }else{
             button.style.visibility = "visible"
