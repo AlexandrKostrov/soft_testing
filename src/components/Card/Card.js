@@ -6,12 +6,12 @@ import './style.css';
 
 const Card = (props) =>{
   return ( <div  className='card'>
-    <LazyLoadComponent>
-    <Image  pict={props.avatar} />
-    </LazyLoadComponent>
+    {/* <LazyLoadComponent> */}
+    <Image  pict={props.avatar}  coords={props.coords}/>
+   {/* </LazyLoadComponent> */}
      <h1 className = "fullName">{props.fullName}</h1>
      <span className="age">{props.age} idNumber</span>
      <div className="info">{props.information}</div>
   </div>)
 }
-export default trackWindowScroll(Card);
+export default Card;

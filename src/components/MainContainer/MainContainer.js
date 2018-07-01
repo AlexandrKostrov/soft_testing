@@ -5,16 +5,19 @@ import ContactDetail from '../ContactDetails/ContactDetails';
 import AutoComplete from '../AutoComplete/AutoComplete';
 import hoc from './hoc.js';
 import autoCompleteHoc from './autoCompleteHoc';
-import { trackWindowScroll } from 'react-lazy-load-image-component';
+import { LazyLoadImage,trackWindowScroll } from 'react-lazy-load-image-component';
+import AVATARS from '../../stubs/avatars';
+import scrollHoc from '../container/scrollHoc';
 import './style.css';
 
-const AVATAR = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ-bbqVJgbf3Qb7sYyl8DW_KEViZa-gqWny_IoYjtFYl9w_6JLw";
+
 
 const MainContainer = ({contacts,loadContact,sortByDate,sortByName,match,matchCatch,
   onUsersRec,display,renderUsers,users,showLocalContacts,handleRef,button,
-  inputVisibility,switcher,getUser,user,sortByServName,sortById,butAction,handleSerLoad}) => {
+  inputVisibility,switcher,getUser,user,sortByServName,sortById,butAction,handleSerLoad,scroll,
+  coords}) => {
     
-  return (  <section className="section">
+  return (<section className="section">
           <header>
             <div className="sort" >
           {  inputVisibility && <AutoComplete onChange={matchCatch} button={button}/>}
@@ -23,7 +26,7 @@ const MainContainer = ({contacts,loadContact,sortByDate,sortByName,match,matchCa
           <button onClick = {sortByServName} > Name Sort </button>
           </div>
           </header>
-          <div className="body">
+          <div className="body" onScroll={scroll}>
          {/* { !display ?
               contacts.map(contact => {
               return (
@@ -41,12 +44,13 @@ const MainContainer = ({contacts,loadContact,sortByDate,sortByName,match,matchCa
                 )
               }) :renderUsers()
             }   */
-            user.map(contact => {
+            user.map((contact,index) => {
               return (
                 <main>
                 <NavLink to={contact.name}>
                <Card
-                avatar = {AVATAR}
+                avatar = {AVATARS[index]}
+                coords={coords}
                 fullName = {`${contact.name}`}
                 age = {contact.id}
                 information = {contact.phone}
@@ -76,4 +80,4 @@ const MainContainer = ({contacts,loadContact,sortByDate,sortByName,match,matchCa
 
 }
 
-export default  hoc(autoCompleteHoc(trackWindowScroll(MainContainer)));
+export default  hoc(autoCompleteHoc(scrollHoc(MainContainer)));
