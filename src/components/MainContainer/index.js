@@ -2,12 +2,13 @@ import { compose, withHandlers, withState } from 'recompose';
 import { connect } from 'react-redux';
 // import {loadContact, sortByDate, sortByName,matchCatch,prevState,} from '../reducers/contacts'
 import {getUser,sortByServName,sortById,loadContact,matchCatch,prevState} from '../reducers/user';
+import {scrollControl,visibilSwitch} from '../reducers/visibility';
 import MainContainer from './MainContainer';
 
 export default compose(
     connect(
-      ({ user }) => ({
-        user,
+      ({ user,visibility }) => ({
+        user,visibility
        
       } ),
       {
@@ -16,7 +17,9 @@ export default compose(
         getUser,
         loadContact,
         matchCatch,
-        prevState
+        prevState,
+        scrollControl,
+        visibilSwitch
       }
     ),
  

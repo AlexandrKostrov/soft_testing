@@ -14,19 +14,21 @@ import './style.css';
 
 const MainContainer = ({contacts,loadContact,sortByDate,sortByName,match,matchCatch,
   onUsersRec,display,renderUsers,users,showLocalContacts,handleRef,button,
-  inputVisibility,switcher,getUser,user,sortByServName,sortById,butAction,handleSerLoad,scroll,
-  coords}) => {
-    
+  visibility,switcher,getUser,user,sortByServName,sortById,butAction,handleSerLoad,scrollControl,
+  }) => {
+    const coord = {};
+    coord.x = visibility.x;
+    coord.y = visibility.y;
   return (<section className="section">
           <header>
             <div className="sort" >
-          {  inputVisibility && <AutoComplete onChange={matchCatch} button={button}/>}
+          {  visibility.visibility && <AutoComplete onChange={matchCatch} button={button}/>}
           <button onClick = {switcher} className="search"> Search </button>
           <button onClick = {sortById} > idDesc </button>
           <button onClick = {sortByServName} > Name Sort </button>
           </div>
           </header>
-          <div className="body" onScroll={scroll}>
+          <div className="body" onScroll={scrollControl}>
          { 
             user.map(contact => {
               return (
@@ -34,7 +36,7 @@ const MainContainer = ({contacts,loadContact,sortByDate,sortByName,match,matchCa
                 <NavLink to={contact.name}>
                <Card
                 avatar = {AVATARS[contact.id-1]}
-                coords={coords}
+                coords={coord}
                 fullName = {`${contact.name}`}
                 id = {contact.id}
                 information = {contact.phone}
@@ -52,7 +54,7 @@ const MainContainer = ({contacts,loadContact,sortByDate,sortByName,match,matchCa
         Load More
       </button>
       <button 
-      className = {user.length ? "hide" : "load-more"}
+      className = {user.length || visibility.visibility? "hide" : "load-more"}
       ref = {handleSerLoad}
       onClick = {butAction}>
         Load from Server
