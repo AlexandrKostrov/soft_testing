@@ -5,8 +5,8 @@ import { LazyLoadComponent,trackWindowScroll } from 'react-lazy-load-image-compo
 import './style.css';
 
 const Card = (props) =>{
-  return ( <div  className='card'>
-   
+  return ( 
+   <div  className='card'> 
     <Image  pict={props.avatar}  coords={props.coords}/>
      <h1 className = "fullName">{props.fullName}</h1>
      <span className="id">{props.id} idNumber</span>

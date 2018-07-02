@@ -6,24 +6,28 @@ import AutoComplete from '../AutoComplete/AutoComplete';
 import hoc from './hoc.js';
 import autoCompleteHoc from './autoCompleteHoc';
 import AVATARS from '../../stubs/avatars';
+import { Button,ButtonToolbar } from 'react-bootstrap';
 import './style.css';
 
 
 
-const MainContainer = ({contacts,loadContact,sortByDate,sortByName,match,matchCatch,
-  onUsersRec,display,renderUsers,users,showLocalContacts,handleRef,button,
-  visibility,switcher,getUser,user,sortByServName,sortById,butAction,handleSerLoad,scrollControl,
+const MainContainer = ({loadContact,matchCatch,
+  onUsersRec,handleRef,button,
+  visibility,switcher,user,sortByServName,
+  sortById,butAction,handleSerLoad,scrollControl,
   }) => {
     const coord = {};
     coord.x = visibility.x;
     coord.y = visibility.y;
   return (<section className="section">
-          <header>
+          <header> 
             <div className="sort" >
-          {  visibility.visibility && <AutoComplete onChange={matchCatch} button={button}/>}
-         {!!user.length && !visibility.visibility && <button onClick = {switcher} className="search"> Search </button>}
-          <button onClick = {sortById} > idDesc </button>
-          <button onClick = {sortByServName} > Name Sort </button>
+          {visibility.visibility && <AutoComplete onChange={matchCatch} button={button}/>}
+         {!!user.length && !visibility.visibility && 
+          <Button bsStyle="primary" onClick = {switcher} > Search </Button>}
+          <Button bsStyle="primary" onClick = {sortById} > idDesc </Button>
+          <Button onClick = {sortByServName} > Name Sort </Button>
+
           </div>
           </header>
           <div className="body" onScroll={scrollControl}>

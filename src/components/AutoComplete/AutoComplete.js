@@ -10,6 +10,7 @@ class AutoComplete extends React.Component {
     }
       resolver = () =>{
           const {button} = this.props; 
+         
          const value = this.inp.value;
         if(value){
            

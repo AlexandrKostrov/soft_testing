@@ -16,7 +16,6 @@ export default function hoc (Component){
 
         butAction = () => {
             this.props.getUser();
-           // this.butSerLoad.style.visibility = "hidden";
         }
       
 

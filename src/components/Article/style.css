@@ -1,6 +1,6 @@
 .article{
     margin: 10px;
-    display: flex;
+    /* display: flex; */
     font-family: cursive;
     border: rgb(19, 3, 61);
     border-width: 3px 7px 7px 4px;
@@ -8,4 +8,13 @@
     height: 350px;
     overflow-y: auto;
     overflow-x: hidden;
+    text-align: center;
 }
+
+.list{
+    width:100%;
+}
+/* .title{
+    margin-left: 273px;
+
+} */
