@@ -2,12 +2,7 @@ import React from 'react';
 
 export default function scrollHoc (Component){
     return class extends React.Component{
-        
-      state = {
-          x : 0,
-          y : 0,
-      }
-
+    
        scroolControl = (event) =>  {
         const top = event.target.scrollTop;
         const left =event.target.scrollLeft;

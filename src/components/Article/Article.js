@@ -1,13 +1,13 @@
 import React from 'react';
+import showInfo from './showInfo';
 import './style.css';
 
-const Article = ({text}) =>{
+const Article = ({text,renderText}) =>{
     return(
-        <section className="article">
-            {console.log(text)}
-        { text }
+      <section className="article">
+        {renderText(text)}
       </section>
     )
 }
 
-export default Article;
+export default showInfo(Article);

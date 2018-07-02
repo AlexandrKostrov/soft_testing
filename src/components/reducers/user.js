@@ -10,7 +10,7 @@ export default function stateReducer(state = initialState, action) {
     case 'LOGIN_SUCCESS': {
         allUsers = action.result;
         currentState = action.result.slice(0,3);
-      return currentState;
+        return currentState;
     }
     case 'LOAD_MORE' : {
          const length = state.length;
@@ -23,23 +23,21 @@ export default function stateReducer(state = initialState, action) {
 
          }
     case 'ID_SORT' : {
-        const sortedState = [...state.sort(idSortDesc)];
-        return sortedState;
+
+        return [...state.sort(idSortDesc)];;
          }
     case 'NAME_SORT' : {
-        const sortedState = [...state.sort(servNameSort)];
-        return sortedState;
+
+        return [...state.sort(servNameSort)];
          }
     case 'PREVIOUS_STATE': {
-        const newlyState = [...currentState];
-        return newlyState;
+
+        return currentState;
          } 
     case 'MATCH_DATA': {
-        const newlyState = [...currentState];
-       // const value = action.payload; 
         const match =new RegExp(action.payload, "i");    
-        const newStateMatching = newlyState.filter((obj) => {
-         if(!action.payload){return newlyState}
+        const newStateMatching = currentState.filter((obj) => {
+         if(!action.payload){return currentState}
           return  match.test(obj.name) ;            
         }
           );

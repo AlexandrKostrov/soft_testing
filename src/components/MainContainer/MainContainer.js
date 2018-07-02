@@ -1,13 +1,11 @@
 import React from 'react';
 import Card from '../Card/Card';
-import {NavLink, Route,Switch} from 'react-router-dom';
+import {NavLink} from 'react-router-dom';
 import ContactDetail from '../ContactDetails/ContactDetails';
 import AutoComplete from '../AutoComplete/AutoComplete';
 import hoc from './hoc.js';
 import autoCompleteHoc from './autoCompleteHoc';
-import { LazyLoadImage,trackWindowScroll } from 'react-lazy-load-image-component';
 import AVATARS from '../../stubs/avatars';
-import scrollHoc from './scrollHoc';
 import './style.css';
 
 
@@ -23,7 +21,7 @@ const MainContainer = ({contacts,loadContact,sortByDate,sortByName,match,matchCa
           <header>
             <div className="sort" >
           {  visibility.visibility && <AutoComplete onChange={matchCatch} button={button}/>}
-          <button onClick = {switcher} className="search"> Search </button>
+         {!!user.length && !visibility.visibility && <button onClick = {switcher} className="search"> Search </button>}
           <button onClick = {sortById} > idDesc </button>
           <button onClick = {sortByServName} > Name Sort </button>
           </div>
@@ -65,4 +63,4 @@ const MainContainer = ({contacts,loadContact,sortByDate,sortByName,match,matchCa
 
 }
 
-export default  hoc(autoCompleteHoc(scrollHoc(MainContainer)));
+export default  hoc(autoCompleteHoc(MainContainer));
