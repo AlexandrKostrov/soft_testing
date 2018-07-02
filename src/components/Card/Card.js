@@ -8,7 +8,6 @@ const Card = (props) =>{
   return ( <div  className='card'>
    
     <Image  pict={props.avatar}  coords={props.coords}/>
-   
      <h1 className = "fullName">{props.fullName}</h1>
      <span className="id">{props.id} idNumber</span>
      <h4 className="tel">Telephone Number</h4>

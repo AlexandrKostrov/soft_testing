@@ -5,7 +5,9 @@ import './style.css';
 const Article = ({text,renderText}) =>{
     return(
       <section className="article">
+          <div className="bod">
         {renderText(text)}
+        </div>
       </section>
     )
 }

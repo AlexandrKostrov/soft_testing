@@ -15,25 +15,31 @@
 
   .img{
     margin-top: 8px;
-    height: 100px;
-    width: 100px;
+    height: 285px;
+    width: 200px;
     margin-left: 15px;
-  }
-
-  .bod {
     overflow-y: auto;
     overflow-x: hidden;
   }
 
+  .bod {
+   
+     
+  }
+
   .name {
     font-size: 30px;
-   margin-left: 24px;
-   margin-top: 20px;
-   top :10;
-   position: absolute;
+   margin-left: 230px;
+  margin-top: 20px;
+   top :0;
+   position: inherit;
+   overflow-y: auto;
+    overflow-x: hidden;
   }
   .idNumber {
-    margin-left: 30px;
-    position: absolute;
+    margin-left: 230px;
+    position: inherit;
     margin-top: 65px;
+    overflow-y: auto;
+    overflow-x: hidden;
   }
