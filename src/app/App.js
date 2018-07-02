@@ -2,8 +2,6 @@ import React, { Component } from 'react';
 import Header from '../components/Header/Header';
 import MainContainer from '../components/MainContainer';
 import ContactDetail from '../components/ContactDetails/ContactDetails';
-import withUsers from './withUsers';
-import hoc from '../components/MainContainer/hoc';
 import AVATARS from '../stubs/avatars';
 import { BrowserRouter as Router, Route, Switch, Redirect } from 'react-router-dom';
 import {Helmet} from "react-helmet";
@@ -30,7 +28,7 @@ class App extends Component {
     
       {this.props.user.map(contact=>{
           
-        return ( <Route exact path={`/${contact.name}`}  render={props => {
+        return ( <Route exact path={`/${contact.name}`}  key = {contact.address} render={props => {
           return <ContactDetail {...props} 
                 avatar = {AVATARS[contact.id - 1]}
                 fullName = {`${contact.name}`}
@@ -55,4 +53,4 @@ class App extends Component {
   }
 }
 
-export default withUsers(App);
+export default  App;

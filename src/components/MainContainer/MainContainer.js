@@ -34,7 +34,7 @@ const MainContainer = ({loadContact,matchCatch,
          { 
             user.map(contact => {
               return (
-                <main>
+                <main key = {contact.phone}>
                 <NavLink to={contact.name}>
                <Card
                 avatar = {AVATARS[contact.id-1]}

@@ -22,9 +22,9 @@
     overflow-x: hidden;
   }
 
-  .bod {
-   
-     
+  .name:hover{
+    background-color: rgb(101, 233, 226);
+    cursor: pointer;
   }
 
   .name {
