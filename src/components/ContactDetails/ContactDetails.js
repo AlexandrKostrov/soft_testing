@@ -12,7 +12,7 @@ const ContactDetail = ({avatar,fullName,id,email,phone,username,website,address,
         <section className="section">
        
           <img className = "img" src={avatar} />
-             <button onClick={redisplayState} className = "name">{fullName}</button> 
+             <span onClick={redisplayState} className = "name">{fullName}</span> 
              <span className="idNumber">{id} idNumber</span>
             
      <Article text = {acticleCont}/>
