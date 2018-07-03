@@ -5,22 +5,25 @@ import Article from '../Article/Article';
 
 import './style.css';
 
-const ContactDetail = ({avatar,fullName,id,email,phone,username,website,address,company,redisplayState,match}) => {
+const ContactDetail = ({avatar,fullName,id,email,phone,username,website,address,company,redisplayState,visibilSwitch,vis}) => {
   const acticleCont = {email,phone,username,website,address,company,};
- 
+
     return(
         <section className="section">
        
           <img className = "img" src={avatar} />
-             <span onClick={redisplayState} className = "name">{fullName}</span> 
+             <span  className = "name">{fullName}</span> 
              <span className="idNumber">{id} idNumber</span>
             
      <Article text = {acticleCont}/>
           
           <footer>
           { <Link to={'/'}> 
-      <button className="load-more"
-      onClick={redisplayState}>
+      <button className="load-more" 
+      onClick={()=>{
+        vis.visibility && visibilSwitch();
+        redisplayState();
+      }}>
         back
       </button>
       </Link>  }

@@ -8,7 +8,7 @@ class AutoComplete extends React.Component {
     handleInp=(node)=>{
         this.inp=node;
     }
-      resolver = () =>{
+      resolver = (event) =>{
           const {button} = this.props; 
          
          const value = this.inp.value;
@@ -24,7 +24,8 @@ class AutoComplete extends React.Component {
     return(
         <input ref={this.handleInp} className="input" 
         type="text" placeholder="enter the surname" 
-        onChange={this.resolver}/>
+        onChange={this.resolver}
+        />
     )}
 }
 

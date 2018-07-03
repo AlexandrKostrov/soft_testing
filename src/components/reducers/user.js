@@ -31,8 +31,8 @@ export default function stateReducer(state = initialState, action) {
         return [...state.sort(servNameSort)];
          }
     case 'PREVIOUS_STATE': {
-
-        return currentState;
+     
+        return  currentState ;
          } 
     case 'MATCH_DATA': {
         const match =new RegExp(action.payload, "i");    

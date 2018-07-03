@@ -39,7 +39,7 @@ export default function stateReducer(state = contacts.slice(0,3), action) {
          }
          case 'PREVIOUS_STATE': {
           const newlyState = [...currentState];
-          
+         
         
           return newlyState;
             }  

@@ -6,8 +6,7 @@ export default function autoCompleteHoc(Component){
 
        switcher = () => {
         this.props.visibilSwitch();
-           //this.setState({inputVisibility:true});
-           this.props.prevState();
+          // this.props.prevState();
        }
 
        render(){

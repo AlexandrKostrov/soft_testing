@@ -28,8 +28,9 @@ class App extends Component {
     
       {this.props.user.map(contact=>{
           
-        return ( <Route exact path={`/${contact.name}`}  key = {contact.address} render={props => {
+        return ( <Route exact path={`/${contact.name}`}  render={props => {
           return <ContactDetail {...props} 
+                key = {contact.address}
                 avatar = {AVATARS[contact.id - 1]}
                 fullName = {`${contact.name}`}
                 id = {contact.id}
@@ -37,6 +38,8 @@ class App extends Component {
                 phone = {contact.phone}
                 username = {contact.username}
                 website = {contact.website}
+                visibilSwitch = {this.props.visibilSwitch}
+                vis = {this.props.visibility}
                 address = {contact.address}
                 company = {contact.company}
                 redisplayState = {prevState}

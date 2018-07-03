@@ -11,11 +11,11 @@ import './style.css';
 
 
 
-const MainContainer = ({loadContact,matchCatch,
-  onUsersRec,handleRef,button,
-  visibility,switcher,user,sortByServName,
-  sortById,butAction,handleSerLoad,scrollControl,
-  }) => {
+const MainContainer = ({loadContact,matchCatch, onUsersRec,handleRef,button, visibility,switcher,user,sortByServName,  sortById,butAction,handleSerLoad,scrollControl }) => {
+ 
+ 
+
+ 
     const coord = {};
     coord.x = visibility.x;
     coord.y = visibility.y;
@@ -26,8 +26,7 @@ const MainContainer = ({loadContact,matchCatch,
          {!!user.length && !visibility.visibility && 
           <Button bsStyle="primary" onClick = {switcher} > Search </Button>}
           <Button bsStyle="primary" onClick = {sortById} > idDesc </Button>
-          <Button onClick = {sortByServName} > Name Sort </Button>
-
+          <Button bsStyle="primary" onClick = {sortByServName} > Name Sort </Button>
           </div>
           </header>
           <div className="body" onScroll={scrollControl}>
