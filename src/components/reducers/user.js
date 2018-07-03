@@ -20,7 +20,7 @@ export default function stateReducer(state = initialState, action) {
          })];
          currentState = [...newState];
          return newState;
-
+ 
          }
     case 'ID_SORT' : {
 
