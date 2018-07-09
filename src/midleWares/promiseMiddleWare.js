@@ -7,7 +7,6 @@ export default  ({dispatch}) => next => async action => {
      
     if(type === "LOGIN"){
          let result = await promise();
-         
     return next({...rest,result,type : `${type}_SUCCESS`});
         }
         

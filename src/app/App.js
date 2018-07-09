@@ -30,7 +30,7 @@ class App extends Component {
           
         return ( <Route exact path={`/${contact.name}`}  render={props => {
           return <ContactDetail {...props} 
-                key = {contact.address}
+                key = {contact.phone}
                 avatar = {AVATARS[contact.id - 1]}
                 fullName = {`${contact.name}`}
                 id = {contact.id}
