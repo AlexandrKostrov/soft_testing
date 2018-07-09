@@ -8,8 +8,9 @@ let currentState = [];
 export default function stateReducer(state = initialState, action) {
   switch (action.type) {
     case 'LOGIN_SUCCESS': {
-        allUsers = action.result;
-        currentState = action.result.slice(0,3);
+        allUsers = action.res;
+        currentState = action.res.slice(0,3);
+        console.log(currentState);
         return currentState;
     }
     case 'LOAD_MORE' : {
