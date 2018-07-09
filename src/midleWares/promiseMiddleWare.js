@@ -6,9 +6,9 @@ export default  ({dispatch}) => next => async action => {
     const {promise, type, payload, ...rest } = action;
      
     if(type === "LOGIN"){
-         let res = await promise();
+         let result = await promise();
          
-    return next({...rest,res,type : `${type}_SUCCESS`});
+    return next({...rest,result,type : `${type}_SUCCESS`});
         }
         
 }
